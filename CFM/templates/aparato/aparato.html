@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block aplicacion %} 
+<link href="{% static "css/aparato/aparato.css"%}" rel="stylesheet" >
+{% endblock aplicacion %}
+
+
+
+{% block contenido %}
+
+
+
+<div class="h-100 w-100 d-flex  justify-content-center align-items-center">
+
+    <div class="contenedor-aparato"> 
+
+        <div class="d-flex align-items-start flex-column my-4">
+
+            <h2 class="m-0">Hacer cotización</h2>
+            <h5 class="my-3">Seleccione una parte.</h5>
+
+        </div>
+
+        <div class="contenedor_tabla">
+
+            <div class="tabla">
+
+                    <!-- Cabezal 622 -->
+                <form class="seccion" action="../seccion" method="GET">
+                    <button class="seccion" type="submit" value="Cabezal 622" name="aparato"> 
+                        <a  class="seccion">Cabezal 622 </a>
+                    </button>
+                </form>
+
+                <!-- Otro -->
+                <form class="seccion"  method="GET">
+                    <button class="seccion" type="submit" value="Otro" name="aparato"> 
+                        <a  class="seccion">Otro </a>
+                    </button>
+                </form>
+
+                <form class="seccion" action="../seccion" method="GET">
+                    <button class="seccion" type="submit" value="Otro" name="aparato"> 
+                        <a  class="seccion"></a>
+                    </button>
+                </form>
+
+                <form class="seccion" action="../seccion" method="GET">
+                    <button class="seccion" type="submit" value="Otro" name="aparato"> 
+                        <a  class="seccion"></a>
+                    </button>
+                </form>
+
+                <form class="seccion" action="../seccion" method="GET">
+                    <button class="seccion" type="submit" value="Otro" name="aparato"> 
+                        <a  class="seccion"></a>
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock contenido %}
+        

@@ -1,0 +1,166 @@
+html {
+    background-color: #2854ac;
+    overflow: hidden;
+}
+
+body {
+font-family: "Poppins", sans-serif;
+height: 100vh;
+overflow: hidden;
+}
+
+div.contenedor-aparato{
+    /*h-100 d-flex flex-row justify-content-center align-items-center*/
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 750px;
+    max-width: 90%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block;
+    color: #2854ac;
+}
+
+
+a {
+text-decoration: none;
+font-weight: 600;
+}
+a:link, a:visited {
+    color: #2854acb4;
+}
+a:hover {
+    color: #2854ac;
+}
+
+
+div.contenedor_tabla{
+    width: 100%;
+    height: 350px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.tabla{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button.seccion, form.seccion{
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom:2px solid #d6ddec;
+    color: #babfca;
+    height: 36.01px;
+    border-radius: 0;
+    
+}
+
+a.seccion{
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    /* border-bottom:2px solid #d6ddec; */
+    color: #babfca;
+    height: 36.01px;
+    
+}
+
+button.seccion{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+a.seccion:hover{
+    color:#3f48cc;
+}
+
+.list-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.wrapper {
+display: flex;
+align-items: center;
+flex-direction: column; 
+justify-content: center;
+width: 100%;
+min-height: 100%;
+padding: 0px;
+}
+
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
+    background: #f7f7f7;
+    max-width: 800px;
+    max-height: 590px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 9px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    border-radius: 20px 20px 20px 20px;
+    background: #f7f7f7;
+    gap: 16px;
+ }
+
+.grid div{
+    background: #f7f7f7;
+    border: 1px solid #f7f7f7;
+}
+
+.grid div:hover{
+    border: 1px solid #2854ac
+}
+
+.divaparato  {
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.imgaparato {
+width: auto;
+width: 285px;
+}
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+-webkit-animation-name: fadeInDown;
+animation-name: fadeInDown;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}

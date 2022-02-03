@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* borde de todos los div predeterminado a menos que se especifique lo contrario */
+div, form, button, a.opciones{
+    border-radius: 10px;
+}
+
+
+
+div .panel{
+    background-color: #2754ab;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px;
+    
+}
+
+
+.logo{
+    width: 75%;
+    height: auto;
+    position: relative;
+    top: 2%;
+}
+
+.cerrarSesion{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 4%;
+
+}
+
+
+div .contenido{
+    background-color: #eaeef6;
+    /* Preguntar a la Javi si no es mejor este color de background */
+    /* background-color: #d9dce3; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+div.cerrarsesion{
+    margin-right: 8px;
+}
+
+
+div.historial{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: space-between;
+    /* height Se encarga de ver que tan espaciados están los elemnentos del historial */
+    height: 40%;
+    width: 70%;
+    position: relative;
+    bottom: 12%;
+}
+
+div.contenedor{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+    height: 25%;
+}
+
+a.historial{
+    display: flex;
+    justify-content:center;
+    color: #f6f6f6ea!important;
+    font-size:100%;
+    width: 125%;
+    border-bottom:2px solid #d6ddec;
+    padding-bottom: 5px!important;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+a.cerrarSesion{
+    color: #f6f6f6ea!important;
+    font-size:large;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+
+a.historial:hover, a.cerrarSesion{
+    color: #f6f6f6!important;
+    font-weight: 600;
+}
+
+
+input.invisible{
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+  }

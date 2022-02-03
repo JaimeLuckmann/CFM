@@ -1,0 +1,130 @@
+    html {
+        background-color: #2854ac;
+        overflow: hidden;
+    }
+
+    body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        display:inline-block;
+        margin: 40px 8px 10px 8px; 
+        color: #2854ac;
+      }
+
+
+    a.opciones, form.opciones {
+    text-decoration: none;
+    font-weight: 600;
+    margin: 30px;
+    width: calc(50%-60px);
+    height: calc(100%-60px);
+    border: 0;
+    }
+    a.opciones:link, a.opciones:visited, form.opciones:link, form.opciones:visited {
+        color: #2854acb4;
+    }
+    a.opciones:hover, form.opciones:hover {
+        color: #2854ac;
+        border: 2px solid #2754ab;
+        margin:28px; 
+    }
+
+    svg.svghome{
+      width:59%;
+    }
+
+
+  .grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    border-radius: 20px 20px 20px 20px;
+    background: #f7f7f7;
+    gap: 16px;
+ }
+  
+  div.contenedor2{
+    /*h-100 d-flex flex-row justify-content-center align-items-center*/
+    height: 49.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    border: 0;
+  }
+
+  .grid div{
+      background: #f7f7f7;
+      border: 1px solid #f7f7f7;
+  }
+  
+  .grid div:hover{
+      border: 1px solid #2854ac
+  }
+
+  .divhome  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+}
+
+.imghome {
+  width: auto;
+  height: auto;
+  max-height:180px;
+  max-width: 200px;
+}
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 0px;
+  }
+
+  #formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
+    background: #f7f7f7;
+    max-width: 800px;
+    max-height: 590px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 9px;
+  }
+
+
+
+  /* ANIMATIONS */
+  
+  /* Simple CSS3 Fade-in-down Animation */
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }

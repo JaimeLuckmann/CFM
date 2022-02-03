@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block aplicacion %} 
+<link href="{% static "css/seccion/seccion.css"%}" rel="stylesheet" >
+{% endblock aplicacion %}
+
+
+
+
+{% block contenido %}
+
+
+<div class="h-100 w-100 d-flex pt-4 justify-content-center align-items-center">
+
+    <div class="contenedor-seccion"> 
+
+        <form method="GET"> 
+            
+            <div class="contenedor-secciones" id="1">
+
+                <div class="box">
+                    <button type="submit" value="CuchilloIzquierdo"  name="seccion">
+                        <h2> Cuchillo izquierdo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cuchillo Izq.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="CuchilloDerecho"  name="seccion">
+                        <h2> Cuchillo derecho </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cuchillo Der.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="BrazoRodillo"  name="seccion">
+                        <h2> Brazo rodillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Brazo rodillo.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="RodilloLateral"  name="seccion">
+                        <h2> Rodillo Lateral </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Rodillo lateral.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="LinkRodillo"  name="seccion">
+                        <h2> Link rodillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Link Rodillo.png' %}">
+                    </button>
+
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="LinkCuchillo"  name="seccion">
+                        <h2> Link cuchillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Link Cuchillo.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="PasadoresCuchillo"  name="seccion">
+                        <h2> Pasadores de cuchillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Pasadores de cuchillo.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="CuchilloFlotante"  name="seccion">
+                        <h2> Cuchillo flotante </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cuchillo Flotante.png' %}">
+                    </button>
+                </div>
+
+                <div class="box">
+                    <button type="submit" value="Articulacion"  name="seccion">
+                        <h2> Articulación </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Articulacion.png' %}">
+                    </button>
+                </div>
+
+            </div>    
+
+
+            <div class="contenedor-secciones hidden" id="2">
+
+                <div class="box">
+                    <button type="submit" value="Chasis"  name="seccion">
+                        <h2> Chasis </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Chasis.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="TapaCabezal"  name="seccion">
+                        <h2> Tapa Cabezal </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Tapa cabezal.png' %}">
+                    </button>
+                </div>
+
+                <div class="box">
+                    <button type="submit" value="RodilloCentral1"  name="seccion">
+                        <h2> Rodillo central 1 </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Rodillo central 1.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="CilindroVolteo"  name="seccion">
+                        <h2> Cilindro Volteo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cilindro volteo.png' %}">
+                    </button>
+                </div>
+
+                <div class="box">
+                    <button type="submit" value="CilindroBrazos"  name="seccion">
+                        <h2> Cilindro brazos </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cilindro brazos.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="CilindroCuchillo"  name="seccion">
+                        <h2> Cilindro cuchillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cilindro cuchillo.png' %}">
+                    </button>
+                </div>
+
+                <div class="box">
+                    <button type="submit" value="CilindroMedicion"  name="seccion">
+                        <h2> Cilindro medición </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Cilindro medicion.png' %}">
+                    </button>
+                </div>
+
+
+                <div class="box">
+                    <button type="submit" value="PasadorRodillo"  name="seccion">
+                        <h2> Pasador de rodillo </h2>
+                        <img class="imgseccion" src="{% static 'img/seccion/Pasador de rodillo.png' %}">
+                    </button>
+                </div>
+
+
+                
+
+            </div>   
+
+
+
+
+            
+        </form>
+
+        <nav aria-label="..." class="paginacion">
+            <ul class="pagination">
+                
+                <li class="page-item disabled" id="anterior">
+                    <a class="page-link" onclick="anterior()">Anterior</a>
+                </li>
+
+                <li class="page-item active" id="pagina1">
+                    <a class="page-link" onclick="pagina(1)">1</a>
+                </li>
+
+                <li class="page-item" id="pagina2">
+                    <a class="page-link" onclick="pagina(2)">2</a>
+                </li>
+
+                <li class="page-item" id="siguiente">
+                    <a class="page-link" onclick="siguiente()">Siguiente</a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+     </div>
+     
+     
+</div>
+
+<script src="{% static 'js/seccion/seccion.js' %}"></script>
+
+{% endblock contenido %}

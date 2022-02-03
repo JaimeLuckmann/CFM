@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block aplicacion %} 
+<link rel="stylesheet" href="{% static 'css/home/usuario.css' %}"> 
+{% endblock aplicacion %}
+
+{% block contenido %}
+
+    <form method="POST" class="contenedorTabla px-4">{% csrf_token %}
+
+        
+            <h3 class="pregunta">¿Está seguro de querer eliminar al usuario
+                {{usuario.nombre}} {{usuario.primerApellido}} {{usuario.segundoApellido}}?</h3>
+
+            <div class="botones">
+
+                <a class="button-18 grande" href="{% url 'home_app:usuarios' %}">Cancelar</a> 
+
+                <button class="button-18 grande" type="submit">Confirmar</button>
+
+            </div>
+
+            
+
+
+    </form>
+
+
+
+{% endblock contenido %}

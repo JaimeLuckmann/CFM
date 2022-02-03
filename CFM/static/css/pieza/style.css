@@ -1,0 +1,401 @@
+
+html {
+    /*background-color: #2854ac;*/
+    overflow: hidden;
+}
+
+body{
+    
+    /*background-color: #2854ac;*/
+    background-position: center center;
+    height: auto;
+    margin: 0px;
+    display: block;
+}
+
+header, footer{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.main{
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    font-size:xx-large;
+    /* text-transform: uppercase; */
+    display:inline-block;
+    color: #2854ac;
+    margin-top: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+    align-items: center;/*Mueve el cuadrado blanco grande de posición*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 0px;
+    vertical-align: middle;
+    }
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+
+
+
+#formContent {
+    border-radius: 20px 20px 20px 20px;
+    background: #f7f7f7d7;
+    width: 840px;
+    max-width: 90%;
+    height: 618px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 9px;
+
+    }    
+
+    .text {
+    display: block;
+    width: 240px;
+    padding-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: left;
+    }
+
+    .text.negrita, .numbers.negrita{
+        font-size: 14;
+        font-weight: 500;
+    }
+
+.numbers {
+    display: block;
+    width: 100px;
+    padding-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} 
+
+input.numbers{
+    border: none;
+    text-align: center;
+    width: 80px;
+}
+
+
+p {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #c9c9c9;
+    background-color: #fff;
+   /* height: 20px;
+    line-height: 0px;*/
+    padding: 5px;
+    font-size: 14px;
+    color: #212121;
+    margin-bottom: 0px;
+}
+
+.geeks{
+    width: 60%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 13px;
+}
+
+
+.popover-body {
+    padding: 0px;
+    color:#212529;
+    min-width: 450px;
+    /*
+    width: auto;
+    height: auto;
+    display: flex;
+    */
+    justify-content:center;
+}
+
+.popover-header {
+    min-width: 450px;
+}
+
+/*Tamano del popover */
+.popover{
+    /*max-width: max-content;*/
+    max-width:450px;
+    margin-top:20px
+}
+
+
+.imgpieza{
+    width: 68%;
+    max-height: 520px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-style: outset;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+
+.upmap{
+    width: 60%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+
+
+.map {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    position: relative;
+
+}
+
+
+
+/*---Cambia formato del boton---- */
+/* Si se quita esto el popover sigue funcionando pero sin el dibujo de la caja */
+/* a.btn::before {
+    height: 25.156px;
+    width: 25.156px;
+    border: 3px solid black;
+    background-color: red;
+} */
+/*--------------------------------*/
+
+a.btn{
+    height: 25.156px;
+    width: 25.156px;
+    border: 2.5px solid black!important;
+    
+}
+
+
+/*---Se encarga de hacer que el indicador se quede dentro de la imagen---*/
+.map button.btn.pop, .map a.btn.pop {
+    position: absolute;
+    color: #23303f;
+    min-width: 0;
+    padding: 0px;
+    height: 25.156px;
+    width: 25.156px;
+    border:0px;
+    /* user-select corrige el error que no permite que sea seleccionable el popup */
+    user-select:auto;
+    cursor: auto;
+}
+/* ----------------------------------------------------------------------*/
+.btn.pop{
+    cursor:pointer!important;
+}
+
+
+
+
+input.nameSeccion{
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+
+  .popupContent{
+    visibility: hidden;
+    width: 450px;
+    background-color: #f7f7f7;
+    border:2px solid #c9c9c9;
+    color: black;
+    border-radius: 6px;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -225px;
+    display: block;
+    margin-bottom:8px ;
+    cursor: auto;
+    animation: fadeout 3s;
+    transform: translateY(100%) translateY(45px);
+}
+
+.popupContent.arriba{
+  transform: none!important;
+}
+
+
+/* Popup arrow */
+.popupContent::after {
+    content: "";
+    position: absolute;
+    /* top: 101%; */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: c9c9c9 transparent transparent transparent;
+    z-index: 0;
+    transform: rotate(180deg);
+    bottom: 101%;
+  }
+
+  .popupContent.arriba::after{
+    transform: none!important;
+    bottom:auto!important;
+    top: 101%!important;
+  }
+
+
+  p.title{
+    font-size: 15;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 1.2%;
+    background-color: #2754ab;
+    border-radius: 6px;
+    color: white;
+  
+  }
+  
+  
+  
+  
+  
+  @keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+  
+    /* Toggle this class - hide and show the popup */
+    .btn .show {
+      visibility: visible!important;
+      animation: fadeIn 0.5s;
+    }
+  
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+   }
+  
+  
+  
+  
+    
+  
+  
+  p{
+    border-top: none;
+    border-bottom: 1px solid #c9c9c9;
+  }
+  
+  .contenedorBotones{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  .contenedor-button{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 0 5%;
+  }
+  
+  .contenedorCambiarPrecio{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 0 5%;
+  }
+  
+  /* CSS */
+  .button-18 {
+    align-items: center;
+    background-color: #2754ab;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    width: 151px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    margin: 5px 0;
+  }
+  
+  .button-18:hover,
+  .button-18:focus { 
+    background-color: #21458d;
+    color: #ffffff;
+  }
+  
+  .button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+  }
+  
+  .button-18:disabled { 
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+  }
+  

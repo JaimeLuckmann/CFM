@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{%load static%}
+{%load humanize%}
+
+
+{% block aplicacion %} 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'css/pieza/style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/pieza/cilindro_brazos.css' %}"> 
+    <link href="{% static "css/animations.css"%}" rel="stylesheet" >
+
+    
+    
+    
+    <!-- Hace que los cuadrados del popover se vean mejores -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+{% endblock aplicacion %}
+
+
+
+{% block contenido %}
+<div class="wrapper fadeInDown" id="wrapper">
+    <div id="formContent">
+    
+        <h1>Cilindro brazos</h1>
+                
+                <section class="map" id="map">
+					
+                    <img class="imgpieza" src="{% static 'img/pieza/Cilindro brazos.png' %}" id="img">  
+
+                    
+
+					{% for l in lst %}
+					<form method="GET" action="">
+						<a id="aPopUp"  class="btn pop 
+							{% ifequal l.numero 1 %} uno {% endifequal %}
+							{% ifequal l.numero 2 %} dos {% endifequal %}
+							{% ifequal l.numero 3 %} tres {% endifequal %}
+							{% ifequal l.numero 4 %} cuatro {% endifequal %}
+							{% ifequal l.numero 5 %} cinco {% endifequal %}
+							{% ifequal l.numero 6 %} seis {% endifequal %}
+							{% ifequal l.numero 7 %} siete {% endifequal %}
+							">
+
+							<div class="popupContent" id="myPopup">
+
+								<p class="title" id="myPopup">
+									{% ifequal l.numero 1 %}1. {% endifequal %}
+									{% ifequal l.numero 2 %}2. {% endifequal %}
+									{% ifequal l.numero 3 %}3. {% endifequal %}
+									{% ifequal l.numero 4 %}4. {% endifequal %}
+									{% ifequal l.numero 5 %}5. {% endifequal %}
+									{% ifequal l.numero 6 %}6. {% endifequal %}
+									{% ifequal l.numero 7 %}7. {% endifequal %}
+									{{l.descripcion}}
+								</p>
+
+								<p id="myPopup">
+									<span class='text negrita' id="myPopup">Descripción</span>
+									<span class='numbers negrita' id="myPopup">Cantidad</span>
+									<span class='numbers negrita' id="myPopup">Precio</span>
+									<span class='numbers negrita' id="myPopup">Total</span>
+								</p>
+								{% for s in slst %}
+								{% ifequal l.id_tarea s.Tarea_id %}
+								
+								{% if admin %}
+								<p id="myPopup">
+									<!-- Descripción -->
+									<span class='text' id="myPopup">{{s.descripcion | title}}</span>
+									<!-- Cantidad -->
+									<span class='numbers' id="myPopup" >
+										<input id="myPopup" class='numbers' pattern="([0-9]){1,4}(\.[0-9]){0,1}"
+										 title="Ingrese un número de máximo 4 cifras y un décimal"
+										 value="{{ s.repeticiones |stringformat:'0.1f' |intcomma }}" 
+										 maxlength="4"
+										 name='repeticiones {{s.descripcion}}'>
+									</span>
+									<!-- costo por unidad -->
+									<span class='numbers'id="myPopup">
+										<input id='myPopup' class='numbers'
+										 pattern="\${0,1}[ ]{0,1}[0-9]{0,1}(\.){0,1}[0-9]{0,3}(\.){0,1}[0-9]{3}"
+										 title="Ingrese un valor mayor a $100 y menor a $9.999.999"
+										 value='$ {{s.costo|intcomma}}' name='costo {{s.descripcion}}'>
+									</span>
+									<!-- costo total -->
+									<span class='numbers' id="myPopup">
+										<input type='text' class='numbers' id='myPopup'
+										  name='{{s.descripcion | title}}' readonly='true'
+										  value='$ {{ s.costo_dot_repeticiones | intcomma}}'>
+									</span>			
+								</p>
+
+								{% else %}
+
+								<p id="myPopup">
+									<!-- Descripción -->
+									<span class='text' id="myPopup">{{s.descripcion | title}}</span>
+									<!-- Repeticiones -->
+									<span class='numbers' id="myPopup">
+										<input id="myPopup" class='numbers' pattern="([0-9]){1,2}(.[0-9]){0,1}"
+										 value="{{ s.repeticiones |stringformat:'0.1f' |intcomma }}" 
+										 name='repeticiones {{s.descripcion}}'>
+									</span>
+									<!-- costo por unidad -->
+									<span class='numbers'id="myPopup">$ {{s.costo | intcomma}}</span>
+									<!-- costo total -->
+									<span class='numbers' id="myPopup">
+										<input type='text' class='numbers' id='myPopup'
+										  name='{{s.descripcion | title}}' readonly='true'
+										  value='$ {{ s.costo_dot_repeticiones | intcomma}}'>
+									</span>
+								</p>
+								{% endif %}
+
+								{% endifequal %}
+								{% endfor %}
+
+								<div class="contenedorBotones">
+
+									<div id="myPopup" class="contenedorCambiarPrecio"> 
+										{% if admin %}
+										<button type="submit" class="button-18" id="myPopup"
+										name="modificar" value="{{l.descripcion}}">Modificar</button>
+										{% endif %}
+									</div>
+	
+									<div id="myPopup" class="contenedor-button"> 
+										<button type="submit" class="button-18" id="myPopup"
+										name="agregar" value="{{l.descripcion}}">Agregar</button>
+									</div>
+	
+
+								</div>
+
+							</div>
+
+						</a>
+						
+						<!-- El siguiente input está oculto y su objetivo es devolver en el request
+						el nombre de la sección para que al apretar cualquiera de los botones sobre
+						los popups no vuelva a la sección anterior -->
+						<input class="nameSeccion" type="text" value="CilindroBrazos"
+						  name="pieza">
+					</form>
+					{% endfor %}
+
+
+                    <script src="static/js/pieza/pieza.js"></script>
+
+                </section>
+
+    </div>
+
+</div>
+{% endblock contenido %}
+
+                

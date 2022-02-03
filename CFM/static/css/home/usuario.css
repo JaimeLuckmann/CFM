@@ -1,0 +1,127 @@
+.contenedorTabla {
+    width: 80%;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+div.tabla{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items:center;
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+}
+
+
+
+.fila{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #d6ddec;
+    padding-left: 10px;
+    align-items: center;
+}
+
+
+.text{
+    width: calc(100%/4);
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.text.negrita{
+    font-weight: 600;
+}
+
+a{
+  text-decoration: none!important;
+}
+
+.button-18 {
+    align-items: center;
+    background-color: #2754ab;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 30px;
+    width: 100px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    margin: 5px 0;
+  }
+  
+  .button-18.grande {
+    width: 150px!important;
+    height: 40px!important;
+  }
+
+  .button-18:hover,
+  .button-18:focus { 
+    background-color: #21458d;
+    color: #ffffff;
+  }
+  
+  .button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+  }
+  
+  .button-18:disabled { 
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+  }
+
+
+  .page-link{
+    color: #2754ab;
+  }
+
+  h3.pregunta{
+    font-family: "Poppins", sans-serif!important;
+    margin-bottom: 3%;
+  }
+
+  .botones{
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .permisos{
+    margin-bottom: 2%;
+  }
+
+  label.form-check-label{
+    font-family: "Poppins", sans-serif!important;
+    user-select: none;
+  }
+

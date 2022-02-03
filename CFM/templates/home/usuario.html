@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block aplicacion %} 
+<link rel="stylesheet" href="{% static 'css/home/usuario.css' %}"> 
+{% endblock aplicacion %}
+
+{% block contenido %}
+
+    <div class="contenedorTabla">
+
+		<div class="tabla">
+
+			<p class="fila">
+				<span class='text negrita'>Nombre</span>
+				<span class='text negrita'>Primer apellido</span>
+				<span class='text negrita'>Segundo apellido</span>
+				<span class='text negrita'>Editar</span>
+				<span class='text negrita'>Eliminar</span>
+			</p>
+
+			{% for u in usuarios %}
+				
+			<p class="fila">
+				<span class='text'>{{u.nombre}}</span>
+				<span class='text'>{{u.primerApellido}}</span>
+				<span class='text'>{{u.segundoApellido}}</span>
+				<span class='text negrita'>
+					<a class="button-18" href="{% url 'home_app:editarUsuario' u.id  %}"> Editar </a>
+				</span>
+				<span class='text negrita'>
+					<a class="button-18" href="{% url 'home_app:eliminarUsuario' u.id  %}"> Eliminar </a>
+				</span>
+			</p>
+			{% endfor %}
+
+		</div>
+
+        <div class="navegacion">
+			{% if  is_paginated %}            
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+				
+				{% if page_obj.has_previous %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{page_obj.previous_page_number}}" tabindex="-1">Anterior</a>
+				</li>
+				{% else %}
+				<li class="page-item disabled">
+					<a class="page-link" href="#" tabindex="-1">Anterior</a>
+				</li>
+				{% endif %}
+
+				
+				{% for pagina in paginator.page_range %}
+					<li class="page-item"><a class="page-link" href="?page={{pagina}}">{{ pagina }}</a></li>
+				{% endfor %}
+					
+				{% if page_obj.has_next %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{page_obj.next_page_number}}">Siguiente</a>
+				</li>
+				{% else %}
+				<li class="page-item disabled">
+					<a class="page-link" href="#">Siguiente</a>
+				</li>
+				{% endif %}
+				</ul>
+			</nav>
+			{% endif %}
+		</div>
+
+    </div>
+
+
+{% endblock contenido %}

@@ -1,0 +1,56 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+        <link href="{% static "css/login/login.css"%}" rel="stylesheet" >
+    </head>
+<body>
+
+    <div class="row h-100 w-100 m-0">
+
+        <!-- lado izquierdo -->
+        <div class="col-sm-6 p-0 d-flex flex-column justify-content-center align-items-center">
+
+            <div class="container w-100 p-0 m-0 d-flex flex-column justify-content-center align-items-center">
+                <img src="static/img/login/FondoLogin2.png" class="img-fluid h-100">
+                <img src="static/img/login/CFM-LOGOBLANCO.png" class="logo">
+            </div>
+            
+        
+        </div>
+
+        <!-- lado derecho -->
+        <div class="col-sm-6" 
+            style="background-color: #dde1e9;">
+
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+                    <div class="fadeIn first">
+                        <p class="h2 m-3" style="color:#2754ab">¡Bienvenido/a!</p>
+                    </div>
+                    <!-- Formulario de Inicio -->
+                    <!-- borré  action="../home"-->
+                    <form method="post"  autocomplete="off">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <!-- <input type="text" id="login" class="fadeIn second m-2" name="usuario" placeholder="Usuario">
+                        <input type="password" id="password" class="fadeIn third m-2" name="password" placeholder="Contraseña"> -->
+                        <button type="submit" class="fadeIn fourth m-4">Ingresar</button>
+                    </form>
+                    <!-- ¿Olvidaste tu contraseña? -->
+                    <div id="formFooter">
+                        <a class="underlineHover" href="{% url 'reset_password' %}">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block aplicacion %} 
+<link rel="stylesheet" href="{% static 'css/home/usuario.css' %}"> 
+{% endblock aplicacion %}
+
+{% block contenido %}
+
+    <form method="POST" class="contenedorTabla px-4">{% csrf_token %}
+
+        <h3 class="pregunta">Permisos del usuario
+            {{usuario.nombre}} {{usuario.primerApellido}} {{usuario.segundoApellido}}:</h3>
+        
+
+        <div class="permisos">    
+            <label class="form-check-label mx-1" for="id_is_active">Usuario activo: </label>
+            {{ form.is_active }}
+        </div>
+
+        <div class="permisos">    
+            <label class="form-check-label mx-1" for="id_is_admin">Permiso de administrador: </label>
+            {{ form.is_admin }}
+        </div>
+
+
+
+        <div class="botones">
+
+            <a class="button-18 grande" href="{% url 'home_app:usuarios' %}">Cancelar</a> 
+
+            <button class="button-18 grande" type="submit">Confirmar</button>
+
+        </div>
+
+
+    </form>
+
+    <script>
+
+        jQuery(document).ready(function($) {
+
+            document.getElementById("id_is_admin").classList.add("form-check-input")
+            document.getElementById("id_is_active").classList.add("form-check-input")
+
+        })
+
+    </script>
+
+
+{% endblock contenido %}
